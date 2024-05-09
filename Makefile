@@ -1,8 +1,9 @@
-VERSION=$(git describe --tags)
+VERSION=`git describe --tags`
+LDFLAGS=-ldflags "-X main.version=${VERSION}"
 
 geoiplookup: geoiplookup.go
 	go get github.com/oschwald/geoip2-golang
-	go build -ldflags "-X main.version=${VERSION}" geoiplookup.go
+	go build ${LDFLAGS} geoiplookup.go
 	strip geoiplookup
 
 clean:
