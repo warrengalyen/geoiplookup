@@ -2,3 +2,4 @@ geoiplookup
 /src/
 /pkg/
 /.idea/
+.env

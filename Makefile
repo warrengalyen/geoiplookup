@@ -1,5 +1,3 @@
-GOPATH := ${PWD}
-export GOPATH
 
 geoiplookup: geoiplookup.go
 	go get github.com/oschwald/geoip2-golang
