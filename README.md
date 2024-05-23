@@ -1,32 +1,30 @@
-# GeoIPLookup - geoiplookup for GeoLite2-Country written in Go
+# GeoIPLookup - geoiplookup for GeoLite2 written in Go
 
-geoiplookup is a geoiplookup replacement for the [free GeoLite2-Country](https://dev.maxmind.com/geoip/geoip2/geolite2/),
+Geoiplookup is a geoiplookup replacement for the [free GeoLite2-Country](https://dev.maxmind.com/geoip/geoip2/geolite2/),
 
 It currently only supports the free GeoLite2-Country database, and there is no planned support for the other types.
 
 
 ## Features
 
-- Drop-in replacement for the now defunct geoiplookup utility
+- Drop-in replacement for the now defunct `geoiplookup` utility
 - Works with the current Maxmind database format (mmdd)
 - IPv4, IPv6 and fully qualified domain name (FQDN) support
 - Options to return just the country iso (`US`) or country name (`United States`), rather than the full `GeoIP Country Edition: US, United States`
 - Built-in database update support
-- Built-in self updater (if new version if available)
+- Built-in self updater (if new release is available)
 
 ## Installing
 
-Linux amd64 binaries are supplied with releases.
+Multiple OS/Architecture binaries are supplied with releases. Extract the binary, make it executable, and move it to a location such as `/usr/local/bin`.
+
+## Updating
+
+GeoipLookup comes with a built-in self-updater:
 
 ```
-bunzip2 geoiplookup_linux_amd64.bz2
-chmod 755 geoiplookup_linux_amd64
-sudo mv geoiplookup_linux_amd64 /usr/local/bin/geoiplookup
-sudo chown root:root /usr/local/bin/geoiplookup
+geoiplookup self-update
 ```
-
-If you with to replace an existing defunct implementation of geoiplookup, then simply name the file `geoiplookup`.
-
 
 ## Compiling from source
 
@@ -39,8 +37,9 @@ make
 ```
 
 ## Basic usage
+
 ```
-Usage: geoiplookup [-i] [-c] [-d <database directory>] <ipaddress|hostname|db-update>
+Usage: geoiplookup [-i] [-c] [-d <database directory>] <ipaddress|hostname|db-update|self-update>
 Options:
   -V	show version number
   -c	return country name
