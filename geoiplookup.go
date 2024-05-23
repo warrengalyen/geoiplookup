@@ -23,7 +23,6 @@ var data_dir (*string)
 
 // URLs
 const (
-	repo_url    = "https://github.com/warrengalyen/geoiplookup/releases"
 	release_url = "https://api.github.com/repos/warrengalyen/geoiplookup/releases/latest"
 )
 

@@ -13,6 +13,7 @@ import (
 
 // Update GeoLite2-Country.mmdb
 func UpdateGeoLite2Country() {
+	Verbose("Updating GeoLite2-Country.mmdb")
 
 	tmp_dir := os.TempDir()
 	gzfile := filepath.Join(tmp_dir, "GeoLite2-Country.tar.gz")
